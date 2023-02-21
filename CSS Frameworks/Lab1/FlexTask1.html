@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Task1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    
+      nav {
+        background-color: rgb(210, 212, 214);
+        padding: 20px 10px;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        font-size: 20px;
+      }
+
+      section {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        gap: 20px;
+      }
+
+      section article{
+        width: 49%;
+        height: 200px;
+        text-align: center;
+        border: 3px solid #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      section article div{
+        padding: 10px;
+        text-align: center;
+      }
+
+      footer{
+        background-color: rgb(210, 212, 214);
+        padding: 10px;
+        bottom: 0;
+      }
+
+      @media (min-width: 501px) and (max-width: 700px){
+        section{
+          flex-direction: column;
+          align-items: center;
+        }
+        
+        section article{
+          width: 60%;
+        }
+      }
+      @media (max-width: 500px){
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        section{
+          flex-direction: column;
+          align-items: center;
+        }
+        section article{
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        <div>
+            This is a flex item
+        </div>
+        <footer>Footer</footer>
+      </article>
+      <article>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At, quod
+            explicabo. Ipsa, ex omnis. Sed recusandae tempore quibusdam aspernatur
+            sapiente commodi eligendi placeat in totam itaque, ducimus mollitia
+            labore voluptates.
+        </div>
+        <footer>Footer</footer>
+      </article>
+    </section>
+  </body>
+</html>

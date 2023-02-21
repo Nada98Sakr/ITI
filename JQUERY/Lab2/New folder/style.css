@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.blackHole{
+    background-color: #000;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+}
+
+.blackHole p{
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+}

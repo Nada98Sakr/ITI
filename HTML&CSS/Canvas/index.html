@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <canvas width="800" height="250" id="can" style="border:1px solid #000"></canvas>
+    <math style="color: red; font-weight:bold; font-size:20px; padding: 20px 0;">
+        <mrow>
+            <mi>c</mi>
+            <mo>=</mo>
+            <msqrt>
+                <mpadded width="70px"; height="30px">
+                    <msup>
+                        <mi>a</mi>
+                        <mn>2</mn>
+                    </msup>
+                    <mo>+</mo>
+                    <msup>
+                        <mi>b</mi>
+                        <mn>2</mn>
+                    </msup>
+                </mpadded>
+            </msqrt>
+        </mrow>
+    </math>
+
+    <script>
+        let can = document.getElementById("can");
+        let ctx = can.getContext("2d");
+
+        ctx.fillText("a", 160,115);
+        ctx.fillText("b", 125,200);
+        ctx.fillText("c", 110,115);
+        ctx.beginPath();
+        ctx.moveTo(150,50);
+        ctx.lineTo(150,180);
+        ctx.lineTo(100,180);
+        ctx.closePath();
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "red";
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.stroke();
+
+    </script>
+</body>
+</html>

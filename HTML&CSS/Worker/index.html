@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgba(0,0,0,0.8);
+        }
+
+        .container{
+            width: fit-content;
+            margin: 250px auto;
+        }
+
+        button{
+            background: rgb(15 116 143 / 70%);
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .box{
+            width: 55px;
+            height: 55px;
+            background-color: cadetblue;
+            border: none;
+            margin: 40px auto;
+        }
+
+        .animateBox{
+            animation: rotation 2s infinite linear;
+        } 
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="btn1">Sum</button>
+        <button id="btn2">Rotate the box</button>
+        <div class="box"></div>
+    </div>
+    <script>
+
+        var worker = new Worker("worker.js")
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let box  = document.querySelector(".box");
+
+        btn1.addEventListener("click",()=>{
+            worker.postMessage("");
+        })
+
+        worker.onmessage = function(message){
+            console.log(message);
+            alert(message.data);
+        }
+        
+        btn2.addEventListener("click", () =>{
+            box.classList.toggle("animateBox");
+        })
+    </script>
+</body>
+</html>
+

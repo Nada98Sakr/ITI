@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Task 1</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      section {
+        text-align: center;
+        text-transform: uppercase;
+        display: grid;
+        height: 100vh;
+        grid-template-areas:
+          "head    head head head"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "SideNav main main SideBar"
+          "footer footer footer footer";
+        gap: 7px 5px;
+      }
+
+      @media (max-width: 767.999px) {
+        section {
+          grid-template-areas:
+            "head"
+            "SideNav"
+            "SideNav"
+            "SideNav"
+            "SideNav"
+            "main"
+            "main"
+            "main"
+            "main"
+            "SideBar"
+            "SideBar"
+            "SideBar"
+            "SideBar"
+            "footer";
+          gap: 5px;
+        }
+      }
+
+      header {
+        background-color: rgba(0, 102, 255, 0.692);
+        padding: 30px;
+        grid-area: head;
+      }
+
+      nav {
+        background-color: rgba(255, 68, 0, 0.842);
+        padding: 30px;
+        grid-area: SideNav;
+      }
+
+      main {
+        background-color: green;
+        padding: 30px;
+        grid-area: main;
+      }
+
+      article {
+        background-color: rgba(255, 68, 0, 0.842);
+        padding: 30px;
+        grid-area: SideBar;
+      }
+
+      footer {
+        background-color: rgba(0, 102, 255, 0.692);
+        padding: 30px;
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <header>Header</header>
+      <nav>SideNav</nav>
+      <main>Main Content</main>
+      <article>SideBar</article>
+      <footer>Footer</footer>
+    </section>
+  </body>
+</html>

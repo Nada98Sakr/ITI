@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Task 2</title>
+    <style>
+      body{
+        background-color: rgb(45, 174, 197);
+      }
+        
+      section {
+        width: 450px;
+        height: 450px;
+        color: white;
+        text-align: center;
+        display: grid;
+        gap: 5px;
+        grid-template-areas:
+          "Box1 Box2 Box2"
+          "Box1 Box3 Box4"
+          "Box5 Box5 Box4";
+          transform: rotate(45deg);
+          margin: auto;
+          margin-top: 100px;
+      }
+
+      @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359.9deg);
+            }
+        }
+
+      @media (max-width: 700px){
+        section {
+          width: 350px;
+          height: 350px;
+          animation: rotation 10s infinite linear;
+          margin-top: 150px;
+        }
+      }
+
+      div {
+        background-color: rgb(48, 46, 46);
+      }
+
+      .Box1 {
+        grid-area: Box1;
+      }
+
+      .Box2 {
+        grid-area: Box2;
+      }
+
+      .Box3 {
+        grid-area: Box3;
+      }
+
+      .Box4 {
+        grid-area: Box4;
+      }
+
+      .Box5 {
+        grid-area: Box5;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="Box1">1</div>
+      <div class="Box2">2</div>
+      <div class="Box3">3</div>
+      <div class="Box4">4</div>
+      <div class="Box5">5</div>
+    </section>
+  </body>
+</html>

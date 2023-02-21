@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flower Blog</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+        crossorigin="anonymous"
+    >
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+        body
+        {
+            font: 13px/22px Helvetica, Arial, sans-serif;
+        }
+        footer, nav{
+            background-color: #222;
+        }
+        aside
+        {
+            background: url("images/sidebar_background.png");
+        }
+        aside section
+        {
+            background: url("images/sidebar_section_background.png") repeat-x;
+        }
+
+        .activeLine:hover{
+            text-decoration: none;
+        }
+        footer .activeLine:hover{
+            color: white !important;
+        }
+        #mainContent .activeLine:hover{
+            color: black !important;
+        }
+
+        .inActiveLine:hover{
+            text-decoration: underline !important;
+        }
+        nav li a:hover{
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-body-secondary bg-opacity-50">
+    <header class="container p-4">
+        <h1 class="px-5 pt-4 ms-5 fs-2 fw-bolder">
+            The Flower Blog
+        </h1>
+    </header>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+            <ul class="navbar-nav w-100 justify-content-evenly align-items-center my-auto">
+                <li class="nav-item">
+                    <a class="text-decoration-none text-white" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-decoration-none text-secondary" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-decoration-none text-secondary" href="#">Archives</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-decoration-none text-secondary" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <i class= "bi bi-rss-fill text-warning fs-5"></i>
+                    <a class="text-decoration-none text-secondary" href="#">Subscribe via. RSS</a>
+                </li>    
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+    <section  class="container col-sm-12 col-md-9 px-0 pt-4 mx-auto rounded-4">
+        <div class="mx-auto position-relative">
+            <div class="col-sm-12 col-md-6 col-lg-5 carousel-caption text-white d-flex flex-column justify-content-evenly text-start bottom-0 start-0 ps-5 text-start h-100">
+                <h2 class="card-title" >
+                    Do you love flowers as much as we do?
+                </h2>
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut.
+                </p>
+            </div>
+            <img src="images/intro_flower.png" class="figure-img img p-0 m-0 rounded-4 w-100" alt="Flower" />
+        </div>
+    </section>
+
+    <section class="container col-9 row p-0 mx-auto justify-content-between">
+        <section id="mainContent" class="col-sm-12 col-md-8 pe-3 py-5 px-0">
+            <section>
+                <article class="blogPost">
+                    <header>
+                        <h2 class="fw-bold fs-3">
+                            This is the title of a blog post</h2>
+                        <p class="fst-italic text-secondary py-3">
+                            Posted on June 29th 2009 by <a class="activeLine text-secondary" href="#">Mads Kjaer</a> - <a class="activeLine text-secondary" href="#comments">3 comments</a>
+                        </p>
+                    </header>
+                    <div>
+                        <p class="pb-2">
+						
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod tellus eu
+                            orci imperdiet nec rutrum lacus blandit. Cras enim nibh, sodales ultricies elementum
+                            vel, fermentum id tellus. Proin metus odio, ultricies eu pharetra dictum, laoreet
+                            id odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet
+                            metus justo. Phasellus vitae tellus orci, at elementum ipsum. In in quam eget diam
+                            adipiscing condimentum. Maecenas gravida diam vitae nisi convallis vulputate quis
+                            sit amet nibh. Nullam ut velit tortor. Curabitur ut elit id nisl volutpat consectetur
+                            ac ac lorem. Quisque non elit et elit lacinia lobortis nec a velit. Sed ac nisl
+                            sed enim consequat porttitor.
+                        </p>
+                        <figure>
+                            <img src="images/flower.png" class="shadow-lg mb-4" alt="Flower" />
+                            <figcaption><i>This is a beautiful flower</i></figcaption>
+                        </figure>
+                        <p>
+                            Pellentesque ut sapien arcu, egestas mollis massa. Fusce lectus leo, fringilla at
+                            aliquet sit amet, volutpat non erat. Aenean molestie nibh vitae turpis venenatis
+                            vel accumsan nunc tincidunt. Suspendisse id purus vel felis auctor mattis non ac
+                            erat. Pellentesque sodales venenatis condimentum. Aliquam sit amet nibh nisi, ut
+                            pulvinar est. Sed ullamcorper nisi vel tortor volutpat eleifend. Vestibulum iaculis
+                            ullamcorper diam consectetur sagittis. Quisque vitae mauris ut elit semper condimentum
+                            varius nec nisl. Nulla tempus porttitor dolor ac eleifend. Proin vitae purus lectus,
+                            a hendrerit ipsum. Aliquam mattis lacinia risus in blandit.
+                        </p>
+                        <p class="pb-4">
+                            Vivamus vitae nulla dolor. Suspendisse eu lacinia justo. Vestibulum a felis ante,
+                            non aliquam leo. Aliquam eleifend, est viverra semper luctus, metus purus commodo
+                            elit, a elementum nisi lectus vel magna. Praesent faucibus leo sit amet arcu vehicula
+                            sed facilisis eros aliquet. Etiam sodales, enim sit amet mollis vestibulum, ipsum
+                            sapien accumsan lectus, eget ultricies arcu velit ut diam. Aenean fermentum luctus
+                            nulla, eu malesuada urna consequat in. Pellentesque habitant morbi tristique senectus
+                            et netus et malesuada fames ac turpis egestas. Pellentesque massa lacus, sodales
+                            id facilisis ac, lobortis sed arcu. Donec hendrerit fringilla ligula, ac rutrum
+                            nulla bibendum id. Cras sapien ligula, tincidunt eget euismod nec, ultricies eu
+                            augue. Nulla vitae velit sollicitudin magna mattis eleifend. Nam enim justo, vulputate
+                            vitae pretium ac, rutrum at turpis. Aenean id magna neque. Sed rhoncus aliquet viverra.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <section id="comments" class="border-top py-4">
+                <h3 class="fw-bold fs-5">
+                    Comments
+                </h3>
+                <section class="accordion" id="accordionExample">
+                    <article class="ccordion-item border rounded-top">
+                        <header class="accordion-header" id="headingOne"> 
+                            <a class="accordion-button activeLine text-black" href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">George Washington</a>
+                        </header>
+                        <div id="collapseOne" class="accordion-collapse collapse show row" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <p class="col-4"> 
+                                on June 29th 2009 at 23:35
+                            </p>
+                            <p class="col-8">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="ccordion-item border" id="headingTwo">
+                            <a class="accordion-button activeLine text-black" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Benjamin Franklin</a>
+                        </header>
+                        <div id="collapseTwo" class="accordion-collapse collapse show row" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <p class="col-4">
+                                on June 29th 2009 at 23:40
+                            </p>
+                            <p class="col-8">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut.
+                            </p>
+                        </div>
+                        
+                    </article>
+                    <article class="ccordion-item border rounded-bottom" id="headingThree">
+                        <header class="accordion-header "> 
+                            <a class="accordion-button activeLine text-black" href="#" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Barack Obama</a> 
+                        </header>
+                        <div id="collapseThree" class="accordion-collapse collapse show row" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <p class="col-4">
+                                on June 29th 2009 at 23:59
+                            </p>
+                            <p class="col-8">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut.
+                            </p>
+                        </div>
+                        
+                    </article>
+                </section>
+            </section>
+
+            <form action="#" method="post" class="d-table w-100">
+            <h3 class="fw-bold fs-5">
+                Post a comment
+            </h3>
+            <div class="container mx-auto w-75">
+                <p class="d-table-row my-5">
+                    <label class="d-table-cell text-end pe-4" for="name">
+                        Name
+                    </label>
+                    <input class="d-table-cell mt-3" name="name" id="name" type="text" />
+                </p>
+                <p class="d-table-row my-5">
+                    <label class="d-table-cell text-end pe-4" for="email">
+                        E-mail
+                    </label>
+                    <input class="d-table-cell mt-3" name="email" id="email" type="text" />
+                </p>
+                <p class="d-table-row my-5">
+                    <label class="d-table-cell text-end pe-4" for="website">
+                        Website
+                    </label>
+                    <input class="d-table-cell mt-3" name="website" id="website" type="text" />
+                </p>
+                <p class="d-table-row my-5">
+                    <label class="d-table-cell  text-end pe-4" for="comment">
+                        Comment
+                    </label>
+                    <textarea class="d-table-cell mt-3" name="comment" id="comment"></textarea>
+                </p>
+                <p class="d-table-row my-5">
+                    <input class="d-table-cell mt-3" type="submit" value="Post comment" />
+                </p>
+            </div>
+            </form>
+        </section>
+        <aside class="col-sm-12 col-md-4 px-0">
+            <section class="m-4 p-4 rounded-3">
+                <header>
+                    <h3 class="fw-bold fs-5">
+                        Categories
+                    </h3>
+                </header>
+                <ul class="list-unstyled ps-4">
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">Lorem ipsum dolor</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">Sit amet consectetur</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">Adipisicing elit sed</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">Do eiusmod tempor</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">Incididunt ut labore</a></li>
+                </ul>
+            </section>
+            <section class="m-4 p-4 rounded-3">
+                <header>
+                    <h3 class="fw-bold fs-5">
+                        Archives
+                    </h3>
+                </header>
+                <ul class="list-unstyled ps-4">
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">December 2008</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">January 2009</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">February 2009</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">March 2009</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">April 2009</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">May 2009</a></li>
+                    <li><a class="inActiveLine text-black text-decoration-none text-decoration-underline.hover" href="#">June 2009</a></li>
+                </ul>
+            </section>
+        </aside>
+    </section>
+
+    <footer class="container-fluid py-5 px-0">
+        <div class="container col-12 px-0 row m-auto text-light-emphasis">
+            <section id="about" class="col-sm-12 col-md-4">
+                <header>
+                    <h3 class="text-white fs-5 fw-bold">About</h3>
+                </header>
+                <p class="">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco <a class="activeLine text-light-emphasis" href="#">laboris nisi ut aliquip</a> ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section id="blogroll" class="col-sm-12 col-md-4">
+                <header>
+                    <h3 class="text-white fs-5 fw-bold">Blogroll</h3>
+                </header>
+                <ul>
+                    <li><a class="activeLine text-light-emphasis" href="#">NETTUTS+</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">FreelanceSwitch</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">In The Woods</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Netsetter</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">PSDTUTS+</a></li>
+                </ul>
+            </section>
+            <section id="popular" class="col-sm-12 col-md-4">
+                <header>
+                    <h3 class="text-white fs-5 fw-bold">Popular</h3>
+                </header>
+                <ul>
+                    <li><a class="activeLine text-light-emphasis" href="#">This is the title of a blog post</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Lorem ipsum dolor sit amet</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Duis aute irure dolor</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Excepteur sint occaecat cupidatat</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Reprehenderit in voluptate velit</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Officia deserunt mollit anim id est laborum</a></li>
+                    <li><a class="activeLine text-light-emphasis" href="#">Lorem ipsum dolor sit amet</a></li>
+                </ul>
+            </section>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

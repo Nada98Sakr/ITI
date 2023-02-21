@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #location{
+            background-color: rgb(46, 85, 136);
+            border: 1px solid rgb(46, 85, 136);
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: white;
+            font-size: 18px;
+            margin: 300px 590px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="location" onclick="GetLocation()">Get Location</button>
+
+    <script>
+        function GetLocation(){
+            navigator.geolocation.getCurrentPosition(ShowLocation, showError, options);
+        }
+
+        function ShowLocation(e){
+            var long = e.coords.longitude;
+            var lat = e.coords.latitude;
+            location.assign("http://maps.google.com/maps?q" + lat + ",+" + long);
+        }
+
+        function showError(err){
+            switch (err.code) {
+                case 0:
+                    console.log(err.message);
+                    break;
+            
+                case 1:
+                    console.log(err.message);
+                    break;
+                
+                case 2:
+                    console.log(err.message);
+                    break;
+
+                case 3:
+                    console.log(err.message);
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        var options = {
+            timeout: 20
+        };
+
+    </script>
+</body>
+</html>

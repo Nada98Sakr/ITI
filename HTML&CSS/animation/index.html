@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 270px 550px;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: antiquewhite;
+            cursor: pointer;
+            transition: 5s;
+        }
+        button:hover {
+            background-color: aqua;
+            animation: MyAnimation 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes MyAnimation{
+            0% {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            }
+            50% {
+                box-shadow: 0 10px 20px rgba(0,0,0,0.6);
+            }
+            100% {
+                box-shadow: 0 15px 25px rgba(0,0,0,0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button>hover to blink</button>
+</body>
+</html>

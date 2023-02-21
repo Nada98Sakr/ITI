@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+</head>
+<body>
+    <div class="container">
+        <video src="./frozen.mp4" width="650" id="vid"></video>
+
+        <div class="videoControls">
+            <div class="videoProgress">
+                <input type = "range"  value = "0" id="progressBar">
+            </div>
+
+            <ul class="BtnControls">
+                <li style="justify-content: flex-start;">
+                    <button id="muteBtn">
+                        <i class="bi bi-volume-up-fill"></i>
+                        <input type = "range" min ="0" max = "1" step = "0.1" value = "0.5" id = "audioVolume" style="display: none;">
+                    </button>
+                    <span id="currTime">0.0 : 0.0</span>
+                </li>
+
+                <li style="justify-content: center;">
+                    <button id="toStartBtn"><i class="bi bi-skip-start-fill"></i></button>
+                    <button id="skipBackward"><i class="bi bi-skip-backward-fill"></i></button>
+                    <button id="playBtn" ><i class="bi bi-play-fill"></i></button>
+                    <button id="skipForward"><i class="bi bi-skip-forward-fill"></i></button>
+                    <button id="toEndBtn"><i class="bi bi-skip-end-fill"></i></button>
+                </li>
+
+                <li style="justify-content: flex-end;">
+                    <button id = "audioSpeedBtn">
+                        <div id="audioSpeed">
+                            <span>0.25</span>
+                            <span>0.5</span>
+                            <span>0.75</span>
+                            <span>1</span>
+                            <span>1.25</span>
+                            <span>1.5</span>
+                            <span>1.75</span>
+                            <span>2</span>
+                        </div>
+                        <img src="./playspeed.png" class="playSpeed" alt="playSpeed">
+                    </button>
+                    <button id="fullScr">
+                        <i class="bi bi-fullscreen"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
