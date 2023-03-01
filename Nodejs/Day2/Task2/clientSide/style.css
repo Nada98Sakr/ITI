@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+.page1Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("landing.jpg");
+    padding: 60px 100px;
+    height: 100vh;
+}
+
+.page2Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("landing.jpg");
+    padding: 20px 100px;
+    height: 100vh;
+}
+
+form{
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid ;
+    padding: 80px 50px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.name, .phone{
+    width: 45%;
+    display: inline-block;
+}
+
+.phone{
+    margin-left: 8.5%;
+}
+
+label{
+    display: block;
+    color: #c5ecfd;
+}
+
+input{
+    width: 100%;
+    margin: 10px 0 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+}
+
+div{
+    color: #c5ecfd;
+    font-size: 11px;
+    padding-bottom: 25px;
+}
+
+#userName:valid+ .userNameDiv,
+#userEmail:valid+ .emailDiv{
+    display: none;
+}
+
+button{
+    background: rgb(15 116 143 / 70%);
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    margin: 10px 0;
+}
+
+@media(max-width: 769px ){
+    body{
+        padding: 30px 10px;
+    }
+    form{
+        width: 90%;
+    }
+}
+
+#FormSubmit{
+    padding: 50px 40px;
+    margin: 200px auto;
+    border: 1px solid rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: fit-content;
+    font-size: 20px;
+    color: #c5ecfd;
+    text-align: center;
+}
