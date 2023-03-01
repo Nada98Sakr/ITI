@@ -38,3 +38,5 @@ class TicketReservation{
     }
 }
 
+![1](https://user-images.githubusercontent.com/77510429/222145376-afaf2e31-980c-4ee5-bb63-d43a95a08ee8.PNG)
+![2](https://user-images.githubusercontent.com/77510429/222145386-59cba2be-f33e-4fbb-8ad6-bfe0aa50d795.PNG)
