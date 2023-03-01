@@ -37,6 +37,6 @@ class TicketReservation{
         return this.tickets;
     }
 }
+![1](https://user-images.githubusercontent.com/77510429/222146414-6cf2f68e-fb31-49b1-b0d3-8955c7e03f41.PNG)
+![2](https://user-images.githubusercontent.com/77510429/222146428-5e4bcd16-c4b7-4f6d-be65-7b2141138ca9.PNG)
 
-![1](https://user-images.githubusercontent.com/77510429/222145376-afaf2e31-980c-4ee5-bb63-d43a95a08ee8.PNG)
-![2](https://user-images.githubusercontent.com/77510429/222145386-59cba2be-f33e-4fbb-8ad6-bfe0aa50d795.PNG)
