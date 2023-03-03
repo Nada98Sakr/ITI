@@ -5,13 +5,14 @@ let htmlFile = fs.readFileSync("../clientSide/index.html").toString();
 let htmlFile2 = fs.readFileSync("../clientSide/welcome.html").toString();
 let cssFile = fs.readFileSync("../clientSide/style.css").toString();
 let jsFile = fs.readFileSync("../clientSide/script.js").toString();
+let jsonFile = fs.readFileSync("./users.json").toString();
 let favIcon = fs.readFileSync("../clientSide/favicon.ico");
 let image = fs.readFileSync("../clientSide/landing.jpg");
 
-let clietName = "";
-let clietPhone = "";
-let clietEmail = "";
-let clietAddress = ""; 
+let clientName = "";
+let clientPhone = "";
+let clientEmail = "";
+let clientAddress = ""; 
 
 http.createServer((req, res) => {
     //#region GET
@@ -28,7 +29,7 @@ http.createServer((req, res) => {
                 break;
             
             case "/script.js":
-                res.writeHead(300,"Hii",{"content-type":"text/javascript"})
+                res.writeHead(200,"ok",{"content-type":"text/javascript"})
                 res.write(jsFile);
                 break;
         
@@ -47,6 +48,11 @@ http.createServer((req, res) => {
                 res.write(htmlFile2);
                 break;
 
+            case "/serverSide/users.json":
+                res.writeHead(200, "ok",{"content-type":"application/json"})
+                res.write(jsonFile);
+                break;
+
             default:
                 res.write("<h1>No Page Found</h1>");
                 break;
@@ -59,24 +65,40 @@ http.createServer((req, res) => {
         
         req.on("data", (data) => {
             data = data.toString().split("&");
-            clietName = data[0].split('=')[1];
-            clietPhone = data[1].split("=")[1];
-            clietEmail = data[2].split("=")[1];
-            clietAddress = data[3].split("=")[1];
-            
+            clientName = data[0].split('=')[1];
+            clientPhone = data[1].split("=")[1];
+            clientEmail = data[2].split("=")[1];
+            clientAddress = data[3].split("=")[1];
+            clientAddress = clientAddress.replace(/\+/g, " ");
+            clientEmail = clientEmail.replace(/%/g, "@");
+            let user = {
+                clientName,
+                clientEmail,
+                clientPhone,
+                clientAddress
+            };
+
+            let AllUsers;
+            fs.readFile("./users.json","utf-8",(err, data) => {
+                if(err) throw err;
+                else{
+                    AllUsers = JSON.parse(data);
+                    AllUsers.users.push(user);
+                    fs.writeFile("./users.json",JSON.stringify(AllUsers),(err)=>{if(err) throw err;})
+                }
+            })
         })
         req.on("end", () => {
-            clietAddress = clietAddress.replace(/\+/g, "\ ");
-            clietEmail = clietEmail.replace(/%/g, "@");
-            htmlFile2 = htmlFile2.replace("{name}", clietName)
-            htmlFile2 = htmlFile2.replace("{phone}", clietPhone)
-            htmlFile2 = htmlFile2.replace("{address}", clietAddress);
-            htmlFile2 = htmlFile2.replace("{email}", clietEmail);
+            htmlFile2 = htmlFile2.replace("{name}", clientName)
+            htmlFile2 = htmlFile2.replace("{phone}", clientPhone)
+            htmlFile2 = htmlFile2.replace("{address}", clientAddress);
+            htmlFile2 = htmlFile2.replace("{email}", clientEmail);
+            
             res.write(htmlFile2);
             res.end();
         });
     }  
     //#endregion
-}).listen('7000', ()=> {
-    console.log("http://localhost:7000")
+}).listen('7001', ()=> {
+    console.log("http://localhost:7001")
 })
