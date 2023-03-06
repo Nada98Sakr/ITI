@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="page1Body">
+    <form action="./welcome.html" method="POST">
+        <div class="name">
+            <label for="clientName">Name</label>
+            <input type="text" name="clientName" pattern="[A-Za-z]{2,}" id="clientName">
+        </div>
+        <div class="phone">
+            <label for="clientPhone">Phone</label>
+            <input type="tel" name="clientPhone" pattern="[0-9]{11}" id="clientPhone">
+        </div>
+        <div class="email">
+            <label for="clientEmail">Email</label>
+            <input type="email" name="clientEmail" id="clientEmail">
+        </div>
+        <div class="address">
+            <label for="clientAddress">Address</label>
+            <input type="text" name="clientAddress" id="clientAddress">
+        </div>
+        <button id="btn">submit</button>
+    </form>
+</body>
+</html>

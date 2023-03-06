@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+.page1Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("landing.jpg");
+    padding: 60px 100px;
+    height: 100vh;
+}
+
+.page2Body{
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("landing.jpg");
+    padding: 10px 100px;
+    max-height: 100vh;
+}
+
+form{
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid ;
+    padding: 80px 50px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.name, .phone{
+    width: 45%;
+    display: inline-block;
+}
+
+.phone{
+    margin-left: 8.5%;
+}
+
+label{
+    display: block;
+    color: #c5ecfd;
+}
+
+input{
+    width: 100%;
+    margin: 10px 0 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+}
+
+div{
+    color: #c5ecfd;
+    font-size: 11px;
+    padding-bottom: 25px;
+}
+
+#userName:valid+ .userNameDiv,
+#userEmail:valid+ .emailDiv{
+    display: none;
+}
+
+button{
+    background: rgb(15 116 143 / 70%);
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    margin: 10px 0;
+}
+
+@media(max-width: 769px ){
+    body{
+        padding: 30px 10px;
+    }
+    form{
+        width: 90%;
+    }
+}
+
+#FormSubmit{
+    padding: 50px 40px;
+    margin: 60px auto;
+    border: 1px solid rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: fit-content;
+    font-size: 20px;
+    color: #c5ecfd;
+    text-align: center;
+}
+
+.usersTable{
+    border-collapse:collapse;
+    background-color:black;
+    box-shadow:0 10px 20px 0 rgba(0,0,0,0.03);
+    border-radius: 10px;
+    table-layout:fixed;
+    opacity:0.7;
+    font-weight:bold;
+    margin:auto;
+    color: white;
+    margin-top: 50px;
+    display: none;
+    width: fit-content;
+}
+
+.usersTable th,td{
+    border:1px solid #f2f2f2;
+    padding:15px 30px;
+    text-align:center;
+    opacity:0.9;
+}
+
+.usersTable th{
+    text-transform:uppercase;
+    font-weight:bold;
+    color: var(--main-color) ; 
+    font-size: 20px;
+}
+
+.usersTable td{
+    font-size: var(--p-FontSize);
+    color: var(--second-color);
+    font-weight: 500;
+}
