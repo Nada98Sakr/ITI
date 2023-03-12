@@ -6,7 +6,6 @@ const bodyParser = require("body-parser");
 const logingMiddleWare = require("./MiddleWares/logging")
 const studentRouters = require("./Routers/studentsRouters");
 const coursesRouters = require("./Routers/coursesRouters");
-const usersRoutes =  require("./Routers/userRouters");
 const cors = require("cors");
 //#endregion
 
@@ -23,10 +22,6 @@ app.use("/api/students", studentRouters)
 
 //#region courses
 app.use("/api/courses", coursesRouters);
-//#endregion
-
-//#region Register Users Registration
-app.use("/api/users", usersRoutes)
 //#endregion
 
 app.listen(PORT, ()=>{console.log("http://localhost:"+PORT)})

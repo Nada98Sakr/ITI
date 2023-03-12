@@ -1,57 +1,52 @@
-let valid = require("../Utils/studentValidation");
-let StudentsSchema = require("../Models/studentsModel");
+let StudentsSchema = require("../schema/studentschema");
+let uuid = require("uuid");
 
-let id = 0;
-
-let GetAllStd = async (req, res) =>{
-    let AllStd = StudentsSchema.find();
-    res.json(AllStd);
-};
-
-let GetOneStd = (req, res) => {
-    let ID = req.params.id;
-    let foundStd = students.findById(ID);
-    res.json(foundStd);
-};
-
-let AddNewStd = (req, res) => {
-    if(valid(req.body)){
-        let std = new StudentsSchema(
-            req.body.name,
-            req.body.age,
-            req.body.track,
-            req.body.coursesID
-        );
-        std.save();
-        res.send("added successfully")
-    }else{
-        res.status(400).send("wrong Data!!");
+let GetAllStd = async (req, res) => {
+    try{
+        let AllStd = await StudentsSchema.find();
+        res.json(AllStd);
+    }catch(err){
+        res.json(err);
     }
 };
 
-let UpdateStd = (req, res) => {
-    let ID = req.params.id;
-    let updatedStd = req.body;
-    if(valid(updatedStd)){
-        updatedStd.id = ID;
-        let flag = Students.updateStd(updatedStd);
-        if(flag){
-            res.json("updated successfuly");
-        }else{
-            res.status(400).send("student not found!!");
-        }
-    }else{
-        res.status(400).send("wrong Data!!");
+let GetOneStd = async (req, res) => {
+    try {
+        let ID = req.params.id;
+        let foundStd = await StudentsSchema.findById(ID);
+        res.json(foundStd);
+    } catch (err) {
+        res.json(err);
     }
 };
 
-let DeleteStd = (req, res) => {
-    let ID = req.params.id;
-    let flag = Students.deleteStd(ID);
-    if(flag){
-        res.send("deleted successfully");
-    }else{
-        res.status(400).send("student not found!!");
+let AddNewStd = async (req, res) => {
+    try {
+        let std = await StudentsSchema.create(req.body);
+        res.send("added successfully");
+    } catch (err) {
+        res.json(err);
+    }
+};
+
+let UpdateStd = async (req, res) => {
+    try {
+        let ID = req.params.id;
+        let updatedStd = req.body;
+        await StudentsSchema.findByIdAndUpdate(ID, updatedStd);
+        res.json("updated successfuly");
+    } catch (err) {
+        res.json(err);
+    }
+};
+
+let DeleteStd = async (req, res) => {
+    try{
+        let ID = req.params.id;
+        await StudentsSchema.findByIdAndDelete(ID);
+        res.send("deleted successfully"); 
+    }catch(err){
+        res.json(err);
     }
 };
 
@@ -60,5 +55,5 @@ module.exports = {
     GetOneStd,
     AddNewStd,
     UpdateStd,
-    DeleteStd
-}
+    DeleteStd,
+};

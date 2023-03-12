@@ -1,49 +1,58 @@
-let valid = require("../Utils/courseValidation");
-let Courses = require("../Models/courseModel");
+let Courses = require("../schema/courseSchema");
 
 let GetAllcourses = async (req, res) => {
-  let AllCourses = await Courses.find();
-  res.json(AllCourses);
+    try {
+        let AllCourses = await Courses.find();
+        res.json(AllCourses);
+    } catch (err) {
+        res.json(err);
+    }
 };
 
 let GetOnecourse = async (req, res) => {
-  let ID = req.params.id;
-  let foundcourse = await Courses.findById(ID);
-  res.json(foundcourse);
+    try {
+        let ID = req.params.id;
+        let foundcourse = await Courses.findById(ID);
+        res.json(foundcourse);
+    } catch (err) {
+        res.json(err);
+    }
 };
 
 let AddNewcourse = async (req, res) => {
-  let newCourse = new Courses(req.body);
-  await newCourse.save();
-  res.send("added successfully");
+    try {
+        let newCourse = await Courses.create(req.body);
+        res.send("added successfully");
+    } catch (err) {
+        res.json(err);
+    }
 };
 
 let Deletecourse = async (req, res) => {
-  let ID = req.params.id;
-  let flag = Courses.findByIdAndDelete(ID);
-  if (flag) {
-    res.send("deleted successfully");
-  } else {
-    res.status(400).send("course not found!!");
-  }
+    try {
+        let ID = req.params.id;
+        await Courses.findByIdAndDelete(ID);
+        res.send("deleted successfully");
+    } catch (err) {
+        res.json(err);
+    }
 };
 
-let Updatecourse = (req, res) => {
-  let ID = req.params.id;
-  let updatedCourse = req.body;
-  updatedCourse.id = ID;
-  let flag = Courses.findByIdAndUpdate(ID, updatedCourse);
-  if (flag) {
-    res.json("updated successfuly");
-  } else {
-    res.status(400).send("student not found!!");
-  }
+let Updatecourse = async (req, res) => {
+    try {
+        let ID = req.params.id;
+        let updatedCourse = req.body;
+        await Courses.findByIdAndUpdate(ID, updatedCourse);
+        res.json("updated successfuly");
+    } catch (err) {
+        res.json(err);
+    }
 };
 
 module.exports = {
-  GetAllcourses,
-  GetOnecourse,
-  AddNewcourse,
-  Updatecourse,
-  Deletecourse,
+    GetAllcourses,
+    GetOnecourse,
+    AddNewcourse,
+    Updatecourse,
+    Deletecourse,
 };
