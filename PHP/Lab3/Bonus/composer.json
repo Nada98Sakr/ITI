@@ -1,0 +1,16 @@
+{
+    "name": "php/lab3",
+    "description": "lab work",
+    "license": "MIT",
+    "require": {
+        "aws/aws-sdk-php": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "classes"
+        ],
+        "files": [
+            "config.php"
+        ]
+    }
+}
