@@ -8,14 +8,8 @@ class S3Uploader{
 
     public function __construct(){
         if(!empty($_FILES)){
-            $validateImage = new ImageValiator();
-            $isValid = $validateImage->ValidateImage();
-            if($isValid){
-                $this->ConnectTOS3();
-                $this->uploadFile();
-            }else{
-                $this->_message = $validateImage->GetMessage();
-            }
+            $this->ConnectTOS3();
+            $this->uploadFile();
         }else{
             $this->_message = "No file selected";
         }
