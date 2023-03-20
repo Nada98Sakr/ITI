@@ -20,11 +20,11 @@
 
         @foreach($posts as $post)
             <tr>
-                <td>{{$post->id}}</td>
-                <td>{{$post->title}}</td>
-                <td>{{$post->user->name}}</td>
-                <td>{{$post['created_at']->format('Y-m-d')}}</td>
-                <td>
+                <td class="align-middle">{{$post->id}}</td>
+                <td class="align-middle">{{$post->title}}</td>
+                <td class="align-middle">{{$post->user->name}}</td>
+                <td class="align-middle">{{$post['created_at']->format('Y-m-d')}}</td>
+                <td class="align-middle">
                     <x-button type="info" :href="route('posts.show',$post->id)" label="View" />
                     <x-button type="primary" :href="route('posts.edit',$post->id)" label="Edit" />
                     @if($post->trashed())

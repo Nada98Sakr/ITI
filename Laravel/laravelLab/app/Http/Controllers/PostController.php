@@ -30,6 +30,7 @@ class PostController extends Controller
 
     public function destroy($id){
         $post = Post::find($id);
+        $post->comments()->delete();
         $post->delete();
         return redirect()->route('posts.index');
     }
@@ -49,7 +50,7 @@ class PostController extends Controller
         Post::create([
             'title' => $request->title,
             'description' => $request->description,
-            'user_id' => $request->creator
+            'user_id' => $request->creator,
         ]);
         return redirect()->route('posts.index');
     }
