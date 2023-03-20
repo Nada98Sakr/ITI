@@ -9,6 +9,7 @@ class CommentController extends Controller
 {
     public function store(Request $request)
     {
+        
         Comment::create([
             'user_id' => $request->user_id,
             'post_id' => $request->post_id,
@@ -18,6 +19,6 @@ class CommentController extends Controller
     }
 
     public function update($id){
-        
+
     }
 }

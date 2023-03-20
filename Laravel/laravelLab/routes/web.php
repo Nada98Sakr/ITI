@@ -23,4 +23,5 @@ Route::put('/posts{id}', [PostController::class, 'update'])->name('posts.update'
 Route::get('/posts/{id}', [PostController::class, "show"])->name('posts.show');
 Route::get('/posts/edit/{id}', [PostController::class, "edit"])->name('posts.edit');
 Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/posts/restore/{id}', [PostController::class,"restore"])->name("posts.restore");
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');

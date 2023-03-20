@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('title') Index @endsection
 
 @section('content')
@@ -28,7 +27,11 @@
                 <td>
                     <x-button type="info" :href="route('posts.show',$post->id)" label="View" />
                     <x-button type="primary" :href="route('posts.edit',$post->id)" label="Edit" />
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$post->id}}">DELETE </button>
+                    @if($post->trashed())
+                        <x-button type="danger" :href="route('posts.restore',$post->id)" label="Restore" />
+                    @else
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$post->id}}">DELETE </button>
+                    @endif
 
                     <form method="POST" action="{{route('posts.destroy',$post->id)}}">
                         @method('DELETE')

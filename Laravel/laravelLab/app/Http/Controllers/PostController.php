@@ -6,13 +6,14 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::paginate(5);
+        $posts = Post::withTrashed()->paginate(5);
         return view("post.index",["posts" => $posts]);
     }
 
@@ -33,12 +34,18 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
+    public function restore($id){
+        $post = Post::withTrashed()->find($id);
+        $post->restore();
+        return redirect()->route('posts.index');
+    }
+
     public function create(){
         $users = User::all();
         return view("post.create",["users" => $users]);
     }
 
-    public function store(Request $request){
+    public function store(StorePostRequest $request){
         Post::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -47,7 +54,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    public function update(Request $request, $id){
+    public function update(StorePostRequest $request, $id){
         $post = Post::find($id);
         $post->update([
             'title' => $request->title,
