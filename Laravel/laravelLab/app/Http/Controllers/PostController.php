@@ -2,69 +2,57 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Post;
+use App\Models\User;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 
 class PostController extends Controller
 {
     public function index(){
-        $posts = [
-            [
-                'id' => 0,
-                'title' => 'Laravel',
-                'description' => "Laravel description",
-                'post_creator' => 'Ahmed',
-                'created_at' => '2023-04-16 10:37:00'
-            ],
-            [
-                'id' => 1,
-                'title' => 'PHP',
-                'description' => "PHP description",
-                'post_creator' => 'Mohamed',
-                'created_at' => '2023-04-16 10:37:00'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Javascript',
-                'description' => "JS description",
-                'post_creator' => 'Ali',
-                'created_at' => '2023-04-16 10:37:00'
-            ],
-        ];
+        $posts = Post::paginate(5);
         return view("post.index",["posts" => $posts]);
     }
 
     public function show($id){
-        $post = [
-            'id' => 1,
-            'title' => 'PHP',
-            'description' => "PHP description",
-            'post_creator' => 'Mohamed',
-            'created_at' => '2023-04-16 10:37:00'
-        ];
-        return view("post.show",["post" => $post]);
-
+        $post = Post::find($id);
+        $comments = Comment::where('post_id', $id)->get();;
+        return view("post.show",["post" => $post,"comments" => $comments]);
     }
 
     public function edit($id){
-        $post = [
-            'id' => 1,
-            'title' => 'PHP',
-            'description' => "PHP description",
-            'post_creator' => 'Mohamed',
-            'created_at' => '2023-04-16 10:37:00'
-        ];
+        $post = Post::find($id);
         return view("post.edit",["post" => $post]);
     }
 
-    public function delete($id){
-        return "in delete";
+    public function destroy($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('posts.index');
     }
 
     public function create(){
-        return view("post.create");
+        $users = User::all();
+        return view("post.create",["users" => $users]);
     }
 
-    public function store(){
+    public function store(Request $request){
+        Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'user_id' => $request->creator
+        ]);
+        return redirect()->route('posts.index');
+    }
+
+    public function update(Request $request, $id){
+        $post = Post::find($id);
+        $post->update([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
         return redirect()->route('posts.index');
     }
 }
