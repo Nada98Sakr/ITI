@@ -8,6 +8,9 @@ use App\Models\User;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePostRequest;
+use App\Jobs\PruneOldPostsJob;
+
+// PruneOldPostsJob::dispatch();
 
 class PostController extends Controller
 {
@@ -95,5 +98,10 @@ class PostController extends Controller
             'image' => str_replace('public', 'storage', $imagePath),
         ]);
         return redirect()->route('posts.index');
+    }
+
+    public function removeOldPosts()
+    {
+        PruneOldPostsJob::dispatch();
     }
 }

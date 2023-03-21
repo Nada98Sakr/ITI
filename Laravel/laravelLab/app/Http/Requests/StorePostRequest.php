@@ -26,7 +26,7 @@ class StorePostRequest extends FormRequest
             'title' => ['required', 'min:3', 'unique:posts,title,'.$this->post],
             'description' => ['required', 'min:10'],
             'user_id' => ['required|exist:users,id'],
-            'image' => ['mimes:jpg,jpeg,png,gif'],
+            'image' => ['mimes:jpg,png'],
             // 'user_id' => [Rule::in('creator', 'user_id')]
         ];
     }

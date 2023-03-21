@@ -17,6 +17,8 @@ use PSpell\Config;
 |
 */
 
+Route::get("/posts/removeOld",[PostController::class,"removeOldPosts"]);
+
 Route::group(['middleware' => 'auth'], function (){
     Route::get('/posts/deleted', [PostController::class,"DeletedPosts"])->name("posts.DeletedPosts");
     Route::resource('posts', PostController::class);
