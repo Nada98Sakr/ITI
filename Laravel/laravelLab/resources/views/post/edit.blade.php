@@ -4,7 +4,7 @@
 @section('title') Index @endsection
 
 @section('content')
-<form method="POST" action="{{route('posts.update',$post['id'])}}" class="mt-5">
+<form method="POST" action="{{route('posts.update',$post['id'])}}" enctype="multipart/form-data" class="mt-5">
     @csrf
     @method('PUT')
     <div class="mb-3">
@@ -27,6 +27,13 @@
         <select name="creator" class="form-control">
             <option value="{{$post->user_id}}">{{$post->user->name}}</option>
         </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Add image</label>
+        <!-- Add value to input -->
+        <!-- {{str_replace('storage', 'public', $post->image)}} -->
+        <input type="file" name="image" class="form-control" id="image" >
     </div>
     <button type="submit" class="btn btn-success">EDIT</button>
 </form>

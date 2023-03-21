@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form method="POST" action="{{route('posts.store')}}" class="mt-5">
+<form method="POST" action="{{route('posts.store')}}" enctype="multipart/form-data" class="mt-5">
     @csrf
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -22,12 +22,17 @@
     </div>
 
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label" required>Post Creator</label>
-        <select name="creator" class="form-control">
+        <label for="creator" class="form-label" required>Post Creator</label>
+        <select name="creator" class="form-control" id="creator">
             @foreach($users as $user)
                 <option value="{{$user->id}}">{{$user->name}}</option>
             @endforeach
         </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Add image</label>
+        <input type="file" name="image" class="form-control" id="image" >
     </div>
     <button type="submit" class="btn btn-success">Create</button>
 </form>

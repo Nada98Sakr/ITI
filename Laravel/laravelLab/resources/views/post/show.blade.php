@@ -52,12 +52,12 @@
             @else
             <div class="card mb-3 allComments">
                 <div class="card-body">
-                    No Comments..
+                    No Comments Yet..
                 </div>
             </div>
             @endif
 
-            <form method="POST" action="{{route('comments.store', ['user_id' => 1, 'post_id' => $post['id']])}}" class="newComment">
+            <form method="POST" action="{{route('comments.store', ['user_id' => Auth::id(), 'post_id' => $post['id'], 'commentable_id' => $post['id'], 'commentable_type' => get_class($post)])}}" class="newComment">
                 @csrf
                 <div class="form-group mb-3">
                     <textarea class="form-control" name="comment" placeholder="Leave a comment" id="exampleFormControlTextarea1" rows="3"></textarea>

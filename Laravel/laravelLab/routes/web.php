@@ -17,17 +17,16 @@ use PSpell\Config;
 |
 */
 
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('/posts/deleted', [PostController::class,"DeletedPosts"])->name("posts.DeletedPosts");
+    Route::resource('posts', PostController::class);
+    Route::get('/posts/restore/{id}', [PostController::class,"restore"])->name("posts.restore");
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// POSTS Routes...
-Route::resource('posts', PostController::class);
-Route::get('/posts/restore/{id}', [PostController::class,"restore"])->name("posts.restore");
-
-// comments Routes...
-Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
-
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
