@@ -3,6 +3,12 @@
 @section('title') Index @endsection
 
 @section('content')
+@if (session('message'))
+    <div class="alert alert-success mt-3">
+        {{ session('message') }}
+    </div>
+@endif
+
     <div class="d-flex justify-content-between mt-5">
         <x-button type="success" :href="route('posts.create')" label="Create Post" />
         <x-button type="danger" :href="route('posts.DeletedPosts')" label="View Deleted Posts" />
@@ -67,7 +73,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center mt-5">
-        {{ $posts->links() }}
+        {{ $posts->links('pagination::bootstrap-4') }}
     </div>
 
 @endsection

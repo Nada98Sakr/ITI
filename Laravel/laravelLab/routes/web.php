@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\OAuthController;
 use PSpell\Config;
 
 /*
@@ -17,6 +18,10 @@ use PSpell\Config;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::get("/posts/removeOld",[PostController::class,"removeOldPosts"]);
 
 Route::group(['middleware' => 'auth'], function (){
@@ -26,9 +31,9 @@ Route::group(['middleware' => 'auth'], function (){
     Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/auth/{provider}/redirect', [OAuthController::class, 'redirect'])->name('oauth.redirect');
+Route::get('/auth/{provider}/callback', [OAuthController::class, 'callback'])->name('oauth.callback');

@@ -5,7 +5,9 @@
 @section('content')
     <!-- <div class="text-center mt-5">
         <x-button type="success" :href="route('posts.create')" label="Restore All" />
+        <x-button type="danger" :href="route('posts.create')" label="Delete All permanantly" />
     </div> -->
+
     <table class="table mt-4">
         <thead>
         <tr>
@@ -41,7 +43,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-center mt-5">
-        {{ $posts->links() }}
+        {{ $posts->links('pagination::bootstrap-4') }}
     </div>
 
 @endsection

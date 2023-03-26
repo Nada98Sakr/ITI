@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('title') Index @endsection
+@section('title') Edit @endsection
 
 @section('content')
 <form method="POST" action="{{route('posts.update',$post['id'])}}" enctype="multipart/form-data" class="mt-5">

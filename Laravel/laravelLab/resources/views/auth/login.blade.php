@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
-@section('title') login @endsection
-
 @section('content')
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -59,6 +56,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+                                <br>
+                                <a href="{{route('oauth.redirect', ['github'])}}" class="btn btn-dark my-3">Login With Github</a>
+                                <a href="{{route('oauth.redirect', ['google'])}}" class="btn btn-danger">Login With google</a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

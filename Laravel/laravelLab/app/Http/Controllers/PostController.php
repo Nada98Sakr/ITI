@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePostRequest;
 use App\Jobs\PruneOldPostsJob;
 
-// PruneOldPostsJob::dispatch();
-
 class PostController extends Controller
 {
     public function index(){
@@ -37,16 +35,16 @@ class PostController extends Controller
 
     public function destroy($id){
         $post = Post::find($id);
-        Storage::delete(str_replace('storage', 'public', $post->image));
-        $post->comments()->delete();
+        // Storage::delete(str_replace('storage', 'public', $post->image));
+        // $post->comments()->delete();
         $post->delete();
-        return back();
+        return redirect()->route('posts.index')->with('message', 'post deleted successfuly.');
     }
 
     public function restore($id){
         $post = Post::withTrashed()->find($id);
         $post->restore();
-        return back();
+        return redirect()->route('posts.index')->with('message', 'post restored successfuly.');
     }
 
     public function create(){
@@ -58,10 +56,6 @@ class PostController extends Controller
         if ($request->file('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
-            $image = $request->file('image');
-            $imageName = explode('.',$image->getClientOriginalName());
-            $imageName = $imageName[0].$request->id.'.'.$imageName[1];
-            $imagePath = $image->storeAs('public/images', $imageName);
             $imagePath = $image->storeAs('public/images', $imageName);
 
             Post::create([
@@ -78,7 +72,7 @@ class PostController extends Controller
             ]);
         }
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('message', 'post created successfuly.');
     }
 
     public function update(StorePostRequest $request, $id){
@@ -97,7 +91,7 @@ class PostController extends Controller
             'description' => $request['description'],
             'image' => str_replace('public', 'storage', $imagePath),
         ]);
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('message', 'post updated successfully.');
     }
 
     public function removeOldPosts()

@@ -7,6 +7,8 @@
         <div class="card-header">
             Post Info
         </div>
+        <?php var_dump(asset($post['image'])) ?>
+        <img src="{{asset($post['image'])}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title mb-3">Title: {{$post['title']}}</h5>
             <p class="card-text mb-3">Description: {{$post['description']}}</p>
