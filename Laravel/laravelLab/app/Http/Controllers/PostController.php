@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Comment;
@@ -13,12 +12,13 @@ use App\Jobs\PruneOldPostsJob;
 class PostController extends Controller
 {
     public function index(){
-        $posts = Post::paginate(5);
+        $posts = Post::withoutTrashed()->paginate(5);
         return view("post.index",["posts" => $posts]);
     }
 
     public function DeletedPosts(){
         $posts = Post::onlyTrashed()->paginate(5);
+
         return view("post.deleted",["posts" => $posts]);
     }
 
@@ -34,17 +34,36 @@ class PostController extends Controller
     }
 
     public function destroy($id){
-        $post = Post::find($id);
-        // Storage::delete(str_replace('storage', 'public', $post->image));
-        // $post->comments()->delete();
-        $post->delete();
+        Post::find($id)->delete();
         return redirect()->route('posts.index')->with('message', 'post deleted successfuly.');
     }
 
+    public function destroyPermanantly($id){
+        $post = Post::onlyTrashed()->find($id);
+        Storage::delete(str_replace('storage', 'public', $post->image));
+        $post->comments()->delete();
+        $post->forceDelete();
+        return redirect()->route('posts.index')->with('message', 'post deleted permanantly.');
+    }
+
+    public function destroyAllPermanently(){
+        $posts = Post::onlyTrashed();
+        $posts->each(function ($post) {
+            Storage::delete(str_replace('storage', 'public', $post->image));
+            $post->comments()->delete();
+            $post->forceDelete();
+        });
+        return redirect()->route('posts.index')->with('message', 'All posts deleted permanantly.');
+    }
+
     public function restore($id){
-        $post = Post::withTrashed()->find($id);
-        $post->restore();
+        Post::withTrashed()->find($id)->restore();
         return redirect()->route('posts.index')->with('message', 'post restored successfuly.');
+    }
+
+    public function restoreAll(){
+        Post::onlyTrashed()->restore();
+        return redirect()->route('posts.index')->with('message', 'All posts restored successfuly.');
     }
 
     public function create(){

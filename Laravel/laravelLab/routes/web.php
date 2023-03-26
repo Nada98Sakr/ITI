@@ -26,8 +26,11 @@ Route::get("/posts/removeOld",[PostController::class,"removeOldPosts"]);
 
 Route::group(['middleware' => 'auth'], function (){
     Route::get('/posts/deleted', [PostController::class,"DeletedPosts"])->name("posts.DeletedPosts");
+    Route::get('/posts/destroyAll', [PostController::class,"destroyAllPermanently"])->name("posts.destroyAll");
+    Route::get('/posts/restoreAll', [PostController::class,"restoreAll"])->name("posts.restoreAll");
     Route::resource('posts', PostController::class);
     Route::get('/posts/restore/{id}', [PostController::class,"restore"])->name("posts.restore");
+    Route::get('/posts/destroyPermanantly/{id}', [PostController::class,"destroyPermanantly"])->name("posts.destroyPermanantly");
     Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 });
 

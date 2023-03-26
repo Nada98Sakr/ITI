@@ -37,16 +37,12 @@
                 @if($post->image == null)
                 <td class="align-middle text-muted" style="font-size: 13px;">No Image</td>
                 @else
-                <td class="align-middle" style="max-width: 150px;">{{$post->image}}</td>
+                <td class="align-middle" style="max-width: 200px;">{{$post->image}}</td>
                 @endif
                 <td class="align-middle">
                     <x-button type="info" :href="route('posts.show',$post->id)" label="View" />
                     <x-button type="primary" :href="route('posts.edit',$post->id)" label="Edit" />
-                    @if($post->trashed())
-                        <x-button type="danger" :href="route('posts.restore',$post->id)" label="Restore" />
-                    @else
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$post->id}}">DELETE </button>
-                    @endif
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-{{$post->id}}">DELETE </button>
 
                     <form method="POST" action="{{route('posts.destroy',$post->id)}}">
                         @method('DELETE')
@@ -65,7 +61,7 @@
                                 </div>
                             </div>
                         </div>
-                </form>
+                    </form>
                 </td>
             </tr>
         @endforeach
