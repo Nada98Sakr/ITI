@@ -86,33 +86,37 @@ class PostController extends Controller
 
         $post->save();
 
-        $tags = explode(',', $request->input('tags'));
-        $post->tags($tags);
-        $post->attachTags($tags);
+        if ($request->tags != null) {
+            $tags = explode(',', $request->tags);
+            $post->tags($tags);
+            $post->attachTags($tags);
+        }
 
         return redirect()->route('posts.index')->with('message', 'post created successfuly.');
     }
 
     public function update(StorePostRequest $request, $id){
         $post = Post::find($id);
+
         if ($request->file('image')) {
-            Storage::delete(str_replace('storage', 'public', $post->image));
+            if (Storage::exists('public/images/'.$post->image)) {
+                Storage::delete('public/images/'.$post->image);
+            }
             $image = $request->file('image');
             $imageName = explode('.',$image->getClientOriginalName());
             $imageName = $imageName[0].$id.'.'.$imageName[1];
-        } else {
-            $imageName = $post->image;
+            $imagePath = $image->storeAs('public/images', $imageName);
+            $post->image = $imageName;
         }
 
-        $post->update([
-            'title' => $request['title'],
-            'description' => $request['description'],
-            'image' => $imageName,
-        ]);
-
-        $tags = explode(',', $request->input('tags'));
-        $post->tags($tags);
-        $post->attachTags($tags);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->save();
+        if ($request->tags != null) {
+            $tags = explode(',', $request->tags);
+            $post->tags($tags);
+            $post->attachTags($tags);
+        }
         return redirect()->route('posts.index')->with('message', 'post updated successfully.');
     }
 
