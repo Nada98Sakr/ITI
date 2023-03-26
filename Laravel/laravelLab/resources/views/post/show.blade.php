@@ -3,19 +3,31 @@
 @section('title') Show @endsection
 
 @section('content')
-    <div class="card mt-5">
+    <div class="card mt-5 mx-auto" style="max-width: 70%;">
         <div class="card-header">
             Post Info
         </div>
-        <?php var_dump(asset($post['image'])) ?>
-        <img src="{{asset($post['image'])}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title mb-3">Title: {{$post['title']}}</h5>
-            <p class="card-text mb-3">Description: {{$post['description']}}</p>
+        <div class="card-body row g-0 p-0 m-0">
+            <div class="col-md-4">
+                <img src="{{ url('storage/images/'.$post->image)}}" class="card-img-top" alt="...">
+            </div>
+
+            <div class="col-md-8 p-4">
+                <h5 class="card-title mb-3">Title: {{$post->title}}</h5>
+                <p class="card-text mb-3">Description: {{$post->description}}</p>
+
+                <div class="tags">
+                    @foreach ($post->tags as $tag)
+                        <span class="me-1 text-secondary">#{{$tag->name}} </span>
+                    @endforeach
+                </div>
+
+                <p class="card-text mb-3 text-muted">created: {{$post->created_at->diffForHumans()}}</p>
+            </div>
         </div>
     </div>
 
-    <div class="card mt-5">
+    <div class="card mt-5 mx-auto" style="max-width: 70%;">
         <div class="card-header">
             Post Creator Info
         </div>
@@ -30,7 +42,7 @@
     </div>
 
     <!-- comment form -->
-    <div class="card my-5">
+    <div class="card my-5 mx-auto" style="max-width: 70%;">
         <div class="card-header">
             comments
         </div>

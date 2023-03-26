@@ -72,24 +72,23 @@ class PostController extends Controller
     }
 
     public function store(StorePostRequest $request){
+        $post = new Post();
+        $post->title = $request['title'];
+        $post->description =  $request['description'];
+        $post->user_id =$request['creator'];
+
         if ($request->file('image')) {
             $image = $request->file('image');
             $imageName = $image->getClientOriginalName();
             $imagePath = $image->storeAs('public/images', $imageName);
-
-            Post::create([
-                'title' =>  $request['title'],
-                'description' =>  $request['description'],
-                'user_id' => $request['creator'],
-                'image' => str_replace('public', 'storage', $imagePath)
-            ]);
-        } else {
-            Post::create([
-                'title' =>  $request['title'],
-                'description' =>  $request['description'],
-                'user_id' => $request['creator']
-            ]);
+            $post->image = str_replace('public', 'storage', $imagePath);
         }
+
+        $post->save();
+
+        $tags = explode(',', $request->input('tags'));
+        $post->tags($tags);
+        $post->attachTags($tags);
 
         return redirect()->route('posts.index')->with('message', 'post created successfuly.');
     }
@@ -105,11 +104,16 @@ class PostController extends Controller
         } else {
             $imagePath = $post->image;
         }
+
         $post->update([
             'title' => $request['title'],
             'description' => $request['description'],
-            'image' => str_replace('public', 'storage', $imagePath),
+            'image' => $imageName,
         ]);
+
+        $tags = explode(',', $request->input('tags'));
+        $post->tags($tags);
+        $post->attachTags($tags);
         return redirect()->route('posts.index')->with('message', 'post updated successfully.');
     }
 

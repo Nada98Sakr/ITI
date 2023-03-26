@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Spatie\Tags\HasTags;
 
 class Post extends Model
 {
     use HasFactory, SoftDeletes;
     use Sluggable;
+    use HasTags;
 
     protected $fillable = [
         'title',
@@ -18,6 +20,7 @@ class Post extends Model
         'slug',
         'user_id',
         'image',
+        'tags'
     ];
 
     protected $casts = [

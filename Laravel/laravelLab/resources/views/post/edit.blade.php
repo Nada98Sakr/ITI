@@ -30,6 +30,11 @@
     </div>
 
     <div class="mb-3">
+        <label for="tags" class="form-label">Tags</label>
+        <input class="form-control" name="tags" id="tags" value="@foreach ($post->tags as $tag){{$tag->name. ', '}}@endforeach"></input>
+    </div>
+
+    <div class="mb-3">
         <label for="image" class="form-label">Add image</label>
         <!-- Add value to input -->
         <!-- {{str_replace('storage', 'public', $post->image)}} -->

@@ -25,9 +25,14 @@
         <label for="creator" class="form-label" required>Post Creator</label>
         <select name="creator" class="form-control" id="creator">
             @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
+            <option value="{{$user->id}}">{{$user->name}}</option>
             @endforeach
         </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="tags" class="form-label">Tags</label>
+        <input class="form-control" name="tags" id="tags"></input>
     </div>
 
     <div class="mb-3">
