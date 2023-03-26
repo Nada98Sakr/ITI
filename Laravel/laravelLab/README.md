@@ -13,7 +13,7 @@ The following image displays the routes handled by the resource controller:
 To deploy the Laravel Labs project, you need to follow these steps:
 
 1. Run `composer install` to install the required dependencies.
-2. Run `php artisan key` to generate an application key.
+2. Run `php artisan key:generate` to generate an application key.
 3. Run `php artisan serve` to start the development server.
 
 ## Tables
