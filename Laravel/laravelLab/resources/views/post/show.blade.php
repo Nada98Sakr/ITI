@@ -8,9 +8,11 @@
             Post Info
         </div>
         <div class="card-body row g-0 p-0 m-0">
+            @if($post->image != null)
             <div class="col-md-4">
                 <img src="{{ url('storage/images/'.$post->image)}}" class="card-img-top" alt="...">
             </div>
+            @endif
 
             <div class="col-md-8 p-4">
                 <h5 class="card-title mb-3">Title: {{$post->title}}</h5>
