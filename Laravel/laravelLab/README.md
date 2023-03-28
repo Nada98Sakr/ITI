@@ -1,66 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Labs
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel Labs is a project that demonstrates how to build a simple blog application using Laravel, a popular PHP web framework. It consists of several features that allow users to create, edit, and delete blog posts, add comments, and login with GitHub and Google. Additionally, the project includes a queue job and task scheduling to automatically delete old posts.
 
-## About Laravel
+## Routes
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The following image displays the routes handled by the resource controller:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![Actions_Handled_By_Resource_Controller](https://user-images.githubusercontent.com/77510429/227795249-e6f22758-4fd1-4748-8438-095c9d0e7235.PNG)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Deployment
 
-## Learning Laravel
+To deploy the Laravel Labs project, you need to follow these steps:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Run `composer install` to install the required dependencies.
+2. Run `php artisan key:generate` to generate an application key.
+3. Run `php artisan serve` to start the development server.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Tables
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The Laravel Labs project includes four tables:
 
-## Laravel Sponsors
+* `users`: stores information about each user of the application, including their name, email address, password, slug, and image.
+* `posts`: stores information about each post, including its id, title, description, author, slug, and image.
+* `comments`: stores information about each comment on a post, including the comment body, author, and the ID of the post it belongs to.
+* `tags`: stores information about tags associated with each post.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Features
 
-### Premium Partners
+Laravel Labs includes the following features:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+* Create new posts: users can create new posts and publish them to the site.
+* Edit posts: users can edit and update existing blog posts.
+* Delete posts: users can delete blog posts. The deleted posts are soft-deleted, which means they can be restored, permanently deleted, or restored all at once.
+* Deleted posts: users can view a list of all deleted posts.
+* Add comments: users can add comments to posts.
+* Login with GitHub and Google.
+* Queue job: deletes posts that were created two years ago.
+* Task scheduling: runs the job daily at midnight.
+* Pagination: The application uses pagination to display posts and comments in smaller, more manageable chunks. This makes it easier for users to navigate large amounts of content.
 
-## Contributing
+## Future work
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+There are several features that could be added to the Laravel Labs project in the future, such as:
 
-## Code of Conduct
+* User profiles: each user could have their own profile where they can edit their information.
+* Search for posts: users could search for specific posts based on keywords or tags.
+* Edit and delete comments: users could edit or delete their comments on posts.
+* Connect social accounts: users could have a button on their profile to connect their GitHub or Google accounts.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Demo
 
-## Security Vulnerabilities
+A demo of the Laravel Labs project is available at [].
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
