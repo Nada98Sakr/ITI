@@ -49,8 +49,8 @@ There are several features that could be added to the Laravel Labs project in th
 * Connect social accounts: users could have a button on their profile to connect their GitHub or Google accounts.
 
 ## Demo
+https://user-images.githubusercontent.com/77510429/228367911-1c4e6a57-c7dc-4d0e-b505-a3b44c7e9c82.mp4
 
-A demo of the Laravel Labs project is available at [].
 
 
 
