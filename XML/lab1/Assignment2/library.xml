@@ -1,0 +1,208 @@
+<Library>
+    <location>Alex</location>
+    <description>Library description</description>
+    <librarian>
+        <name>nada</name>
+        <email>nada@gmail.com</email>
+    </librarian>
+    <books>
+        <book>
+            <title>Book1</title>
+            <ISBN>12345<ISBN>
+            <author>
+                <name>
+                    <fname>Nada</fname>
+                    <lname>Saeed</lname>
+                </name>
+            </author>
+            <preface>
+                Book1 preface..
+            </preface>
+            <parts>
+                <part no='1' title="Part1">
+                    <chapters>
+                        <chapter title="CH01">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                        <chapter title="CH02">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                    </chapters>
+                </part>
+                <part no='1' title="Part1">
+                    <chapters>
+                        <chapter title="CH01">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                        <chapter title="CH02">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                    </chapters>
+                </part>
+            </parts>
+        </book>
+        <book>
+            <title>Book1</title>
+            <ISBN>12345<ISBN>
+            <author>
+                <name>
+                    <fname>Nourhan</fname>
+                    <lname>Saeed</lname>
+                </name>
+            </author>
+            <preface>
+                Book2 preface..
+            </preface>
+            <parts>
+                <part no='1' title="Part1">
+                    <chapters>
+                        <chapter title="CH01">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                        <chapter title="CH02">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                    </chapters>
+                </part>
+                <part no='1' title="Part1">
+                    <chapters>
+                        <chapter title="CH01">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                        <chapter title="CH02">
+                            <summary>summary paragraph</summary>
+                            <sections>
+                                <section title="Section01">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                                <section title="Section02">
+                                    <p>content 01</p>
+                                    <p>content 02</p>
+                                    <p>content 03</p>
+                                    <p>content 04</p>
+                                    <p>content 05</p>
+                                </section>
+                            </sections>
+                        </chapter>
+                    </chapters>
+                </part>
+            </parts>
+        </book>
+    </books>
+</Library>

@@ -1,0 +1,48 @@
+<?xml-stylesheet type="text/css" href="employee.css"?>
+
+<employees>
+	<employee>
+		<name>Nada</name>
+		<phones>
+			<phone type="home">0377777777</phone>
+			<phone type="work">0352525252</phone>
+			<phone type="mobile">01013330303</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>21,</street> 
+				<buildingNumber>21,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>22,</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>sidi bishr,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address>
+		</addresses>
+		<email>nada@gmail.com</email>
+	</employee>
+
+	<employee>
+		<name>nourhan</name>
+		<phones>
+			<phone type="home">0311111111</phone>
+			<phone type="work">0322222222</phone>
+			<phone type="mobile">01012121212</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>st1,</street> 
+				<buildingNumber>no1,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+		<email>nourhan@gmail.com</email>
+	</employee>
+</employees>
