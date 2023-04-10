@@ -1,0 +1,47 @@
+<!DOCTYPE employees SYSTEM 'employees.dtd'>
+
+<employees>
+	<employee>
+		<name>Nada</name>
+		<phones>
+			<phone type="home">0312345678</phone>
+			<phone type="work">0391111567</phone>
+			<phone type="mobile">01011145678</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>st1,</street> 
+				<buildingNumber>21,</buildingNumber> 
+				<Region>Sidi Bishr,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>st2,</street> 
+				<buildingNumber>21,</buildingNumber> 
+				<Region>AlMndra,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address>
+		</addresses>
+		<email>nada@gmail.com</email>
+	</employee>
+	<employee>
+		<name>Nourhan</name>
+		<phones>
+			<phone type="home">0312345678</phone>
+			<phone type="work">0391234567</phone>
+			<phone type="mobile">01011111178</phone>
+		</phones>
+		<addresses>
+			<address>
+				<street>st1,</street> 
+				<buildingNumber>no1,</buildingNumber> 
+				<Region>Sidi Bishr,</Region> 
+				<city>Alex,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+		<email>nourhan@gmail.com</email>
+	</employee>
+</employees>
