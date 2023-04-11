@@ -1,0 +1,97 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="employees">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="employee" maxOccurs="unbounded" minOccurs="0">
+            <xs:complexType>
+                <xs:sequence>
+                <xs:element type="xs:string" name="name"/>
+                <xs:element name="phones">
+                    <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="phone" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                            <xs:simpleContent>
+                            <xs:extension base="xs:int">
+                                <xs:attribute type="xs:string" name="type" use="optional"/>
+                            </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="addresses">
+                    <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="address" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                            <xs:element type="xs:string" name="street"/>
+                            <xs:element type="xs:string" name="buildingNumber"/>
+                            <xs:element type="xs:string" name="Region"/>
+                            <xs:element type="xs:string" name="city"/>
+                            <xs:element type="xs:string" name="country"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element type="xs:string" name="email"/>
+                </xs:sequence>
+                <xs:attribute type="xs:byte" name="isbn" use="optional"/>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    </xs:schema><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="employees">
+        <xs:complexType>
+        <xs:sequence>
+            <xs:element name="employee" maxOccurs="unbounded" minOccurs="0">
+            <xs:complexType>
+                <xs:sequence>
+                <xs:element type="xs:string" name="name"/>
+                <xs:element name="phones">
+                    <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="phone" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                            <xs:simpleContent>
+                            <xs:extension base="xs:int">
+                                <xs:attribute type="xs:string" name="type" use="optional"/>
+                            </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="addresses">
+                    <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="address" maxOccurs="unbounded" minOccurs="0">
+                        <xs:complexType>
+                            <xs:sequence>
+                            <xs:element type="xs:string" name="street"/>
+                            <xs:element type="xs:string" name="buildingNumber"/>
+                            <xs:element type="xs:string" name="Region"/>
+                            <xs:element type="xs:string" name="city"/>
+                            <xs:element type="xs:string" name="country"/>
+                            </xs:sequence>
+                        </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element type="xs:string" name="email"/>
+                </xs:sequence>
+                <xs:attribute type="xs:byte" name="isbn" use="optional"/>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
