@@ -1,0 +1,53 @@
+employees {
+    background-color: #585252;
+    width: 100%;
+    padding-top: 60px;
+}
+
+employee {
+    display: block;
+    margin-bottom: 30pt;
+    margin-left: 0pt;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+name {
+    font-size: 20pt;
+    color: #ffffff;
+    display: block;
+}
+
+phone {
+    font-size: 20pt;
+    display: block;
+}
+
+phone[type="home"] {
+    color: #ffffff;
+}
+
+phone[type="work"] {
+    color: #ffffff;
+}
+
+phone[type="mobile"] {
+    color: #ffffff;
+}
+
+address {
+    font-size: 20pt;
+    color: #ffffff;
+    display: block;
+}
+
+email {
+    font-size: 20pt;
+    color: #ffffff;
+}
