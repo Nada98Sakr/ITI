@@ -1,0 +1,36 @@
+.Slider{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.8);
+  padding: 40px;
+  color: #c5ecfd;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.Slider .slideContainer img{
+    width: 100%;
+    height: 60vh;
+    display: none;
+    border-radius: 10px;
+}
+
+.Slider .slideContainer .active{
+  display: block;
+}
+
+.Slider input{
+  background: rgb(15 116 143 / 70%);
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  justify-self: flex-end;
+  margin: 20px 10px 0;
+}
