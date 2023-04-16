@@ -1,0 +1,53 @@
+.AddNewStd{
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #c5ecfd;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #c5ecfd;
+  padding: 10px;
+  color: #c5ecfd;
+  margin: 10px 0;
+}
+
+input[type="submit"] {
+  background: rgb(15 116 143 / 70%);
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.active{
+  color: red;
+  width: 100%;
+}
+
+.active p {
+  margin: 0;
+  text-align: left;
+}
+
+.inActive{
+  display: none;
+}

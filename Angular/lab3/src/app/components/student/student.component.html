@@ -1,0 +1,18 @@
+<div class="showAllStd">
+  <table *ngIf="allStudents.length > 0">
+    <thead>
+      <tr>
+        <th>index</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of allStudents; index as i">
+        <td>{{i+1}}</td>
+        <td>{{std.name}}</td>
+        <td>{{std.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

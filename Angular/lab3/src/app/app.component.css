@@ -1,0 +1,11 @@
+input{
+  background: rgb(15 116 143 / 70%);
+  text-align: center;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+  margin-top: 20px;
+}

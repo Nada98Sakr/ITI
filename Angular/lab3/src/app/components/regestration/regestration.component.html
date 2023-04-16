@@ -1,0 +1,11 @@
+<div class="AddNewStd">
+  <input type="text" name="stdName" id="name" [(ngModel)]="stdName" placeholder="Student Name">
+  <div [ngClass]="stdName.length <3 && stdName ? 'active' :'inActive'">
+    <p>Name should be at least 3 char.</p>
+  </div>
+  <input type="text" name="stdAge" id="age"[(ngModel)]="stdAge" placeholder="Student Age">
+  <div [ngClass]="(+stdAge < 20 || +stdAge >40) && stdAge ? 'active' :'inActive'">
+    <p>Age is not valid</p>
+  </div>
+  <input type="submit" value="ADD" id="add" (click)="Add()">
+</div>

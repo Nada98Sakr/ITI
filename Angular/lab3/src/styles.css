@@ -1,0 +1,9 @@
+body{
+    background-color: #090947;
+    background-image: linear-gradient(315deg, #090947 0%, #5a585a 74%);
+    max-width: 100%;
+    height:97.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
