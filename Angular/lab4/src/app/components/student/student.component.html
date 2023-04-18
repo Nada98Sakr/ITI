@@ -1,0 +1,22 @@
+<h2 class="mb-4 text-center">All students</h2>
+<table class="table table-primary table-striped w-50 text-center mx-auto">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let std of students; index as i">
+        <td>{{i+1}}</td>
+        <td>{{std.name}}</td>
+        <td>{{std.age}}</td>
+        <td>{{std.email}}</td>
+        <td><a routerLink="/students/1" class="text-dark">VIEW</a></td>
+      </tr>
+  </tbody>
+</table>
