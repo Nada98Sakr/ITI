@@ -1,0 +1,17 @@
+<div class="card w-50 mx-auto" *ngIf="student; else falseBlock">
+  <div class="card-header">
+    Student Info.
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{student.name}}</h5>
+    <p>ID: {{student.id}}</p>
+    <p>Age: {{student.age}}</p>
+    <p>Phone: {{student.phone}}</p>
+    <p class="card-text">Email: {{student.email}}.</p>
+    <a routerLink="/" class="btn btn-primary">Back to All students</a>
+  </div>
+</div>
+
+<ng-template #falseBlock>
+  <app-loader></app-loader>
+</ng-template>

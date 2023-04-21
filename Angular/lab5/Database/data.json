@@ -1,0 +1,53 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nada",
+      "age": 25,
+      "email": "nada@gmail.com",
+      "phone": "01112231233"
+    },
+    {
+      "id": 2,
+      "name": "Nourhan",
+      "age": "20",
+      "email": "nourhan@gmail.com",
+      "phone": "01212231230"
+    },
+    {
+      "id": 3,
+      "name": "Salma",
+      "age": 24,
+      "email": "salma@gmail.com",
+      "phone": "01213331231"
+    },
+    {
+      "id": 4,
+      "name": "mahmoud",
+      "age": "21",
+      "email": "mahmoud@gmail.com",
+      "phone": "01223112321"
+    },
+    {
+      "id": 5,
+      "name": "Mohab",
+      "age": "16",
+      "email": "mohab@gmail.com",
+      "phone": "01212241244"
+    },
+    {
+      "name": "heidy",
+      "age": "22",
+      "email": "heidy@gmail.com",
+      "phone": "01231231231",
+      "id": 6
+    },
+    {
+      "name": "samer",
+      "age": "22",
+      "email": "samer@gmail.com",
+      "phone": "01232232235",
+      "id": 8
+    }
+  ]
+}

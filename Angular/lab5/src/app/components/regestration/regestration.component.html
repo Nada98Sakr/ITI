@@ -1,0 +1,61 @@
+<form (ngSubmit)="Add()" [formGroup] = "validationForm" class="form w-50 mx-auto bg-body-secondary border rounded-4 p-5 text-center">
+  <h2 class="mb-4">Add new student</h2>
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-1">
+      <label for="inputName" class="col-form-label">Name</label>
+    </div>
+    <div class="col-11">
+      <input type="text" formControlName="name" id="inputName" class="form-control">
+    </div>
+    <div *ngIf="!NameValidation" class="col-12" >
+      <span class="form-text text-danger" style="margin-left: 60px;">
+        Must be at least 3 characters long.
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-1">
+      <label for="inputEmail" class="col-form-label">Email</label>
+    </div>
+    <div class="col-11">
+      <input type="email" formControlName="email" id="inputEmail" class="form-control">
+    </div>
+    <div *ngIf="!EmailValidation" class="col-12">
+      <span class="form-text text-danger" style="margin-left: 60px;">
+        Invalid Email.
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-1">
+      <label for="inputAge" class="col-form-label">Age</label>
+    </div>
+    <div class="col-11">
+      <input type="text" id="inputAge" formControlName="age" class="form-control">
+    </div>
+    <div *ngIf="!AgeValidation" class="col-12">
+      <span class="form-text text-danger" style="margin-left: 60px;">
+        Must be between 20 and 40.
+      </span>
+    </div>
+  </div>
+
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-1">
+      <label for="inputPhone" class="col-form-label">Phone</label>
+    </div>
+    <div class="col-11">
+      <input type="text" id="inputPhone" formControlName="phone" class="form-control">
+    </div>
+    <div *ngIf="!PhoneValidation" class="col-12">
+      <span class="form-text text-danger" style="margin-left: 60px;">
+        Must be 11 digit.
+      </span>
+    </div>
+  </div>
+
+  <input type="submit" class="btn btn-primary mt-5 " value="ADD">
+
+</form>
