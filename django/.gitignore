@@ -1,0 +1,4 @@
+myEnv
+bookStore/__pycache__
+bookStore/migrations
+djangoLabs/__pycache__

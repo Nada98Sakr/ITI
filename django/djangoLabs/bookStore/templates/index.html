@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Book Store
+{% endblock %}
+
+{% block content %}
+<div class="my-4 text-center">
+    <a class="btn btn-success" href="{% url 'bookStore:add' %}"> Add New Book</a>
+</div>
+<table class="table table-primary w-50 text-center mx-auto">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in book_list%}
+        <tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.name }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.description | truncatewords:2  | title }}</td>
+            <td> 
+                <a class="btn btn-primary" href="{% url 'bookStore:show_details' book.id %}"> <i class="bx bx-show-alt" style="color: #fff"></i></a>
+                <a class="btn btn-success" href="{% url 'bookStore:edit' book.id %}"> <i class="bx bxs-edit"></i></a>
+                <a class="btn btn-danger" href="{% url 'bookStore:delete' book.id %}"> <i class="bx bx-trash"></i></a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center"> sorr, not task in list</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

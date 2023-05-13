@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    Book Store
+{% endblock %}
+
+{% block content %}
+<div class="card w-50 mx-auto">
+    <div class="card-header">
+        Book Info.
+    </div>
+    <div class="card-body">
+        <p>ID: {{book.id}}</p>
+        <p>{{book.name}}</p>
+        <p>Price: {{book.price}}</p>
+        <p>Description: {{book.description}}</p>
+        <a href="/bookStore/" class="btn btn-primary">Back to All students</a>
+    </div>
+</div>
+{% endblock %}
