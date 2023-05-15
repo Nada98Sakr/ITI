@@ -1,0 +1,43 @@
+.inputContainer{
+    width: 60%;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.8);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #c5ecfd;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.inputContainer input[type="text"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #c5ecfd;
+    padding: 10px;
+    color: #c5ecfd;
+}
+
+.inputContainer p{
+    max-width: 400px;
+    padding: 10px 40px;
+}
+
+.inputContainer input[type="submit"] {
+    background: rgb(15 116 143 / 70%);
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    width: fit-content;
+    justify-self: flex-end;
+}
