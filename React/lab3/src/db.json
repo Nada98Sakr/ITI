@@ -1,0 +1,55 @@
+{
+  "artists": [
+    { 
+        "id": 1,
+        "name": "Jimi Hendrix",
+        "cover":"/assets/covers/jimi_hendrix.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "albums": [
+            {"albumId":"a1","title":"Electric Ladyland","year":1968,"cover":"/assets/albums/electric-ladyland.jpg","price":20},
+            {"albumId":"a2","title":"Experience","year":1971,"cover":"/assets/albums/experienced.jpg","price":25},
+            {"albumId":"a3","title":"Isle of Wright","year":1971,"cover":"/assets/albums/isle_of_wright.jpg","price":15},
+            {"albumId":"a4","title":"Band of Gypsys","year":1970,"cover":"/assets/albums/band_of_gypsys.jpg","price":10}
+        ],
+        "genre":"rock, blues"
+    },
+    { 
+        "id": 2,
+        "name": "Madonna",
+        "cover":"/assets/covers/madonna.jpg", 
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "albums": [
+            {"albumId":"b1","title":"Like a Virgin","year":1984,"cover":"/assets/albums/like_a_virgin.jpg","price":20},
+            {"albumId":"b2","title":"True Blue","year":1986,"cover":"/assets/albums/true_blue.jpg","price":25},
+            {"albumId":"b3","title":"Erotica","year":1994,"cover":"/assets/albums/erotica.jpg","price":15},
+            {"albumId":"b4","title":"Ray of Light","year":1998,"cover":"/assets/albums/ray_of_light.jpg","price":10}
+        ],
+        "genre":"pop"
+    },
+    { 
+        "id": 3,
+        "name": "Johnny Cash", 
+        "cover":"/assets/covers/johnny_cash.jpg",
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", 
+        "albums": [
+            {"albumId":"c1","title":"Ain't No Grave","year":2010,"cover":"/assets/albums/no_grave.jpg","price":20},
+            {"albumId":"c2","title":"Out Among the Stars","year":2014,"cover":"/assets/albums/among_stars.jpg","price":25},
+            {"albumId":"c3","title":"Solitary Man","year":2000,"cover":"/assets/albums/solitary_man.jpg","price":15},
+            {"albumId":"c4","title":"The Man Comes Around","year":2002,"cover":"/assets/albums/man_comes_around.jpg","price":10}
+        ],
+        "genre":"pop"
+    },
+    { 
+        "id": 4,
+        "name": "Pink Floyd", 
+        "cover":"/assets/covers/pink_floyd.jpg", 
+        "bio":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "albums": [
+            {"albumId":"d1","title":"The Wall","year":1979,"cover":"/assets/albums/among_stars.jpg","price":20},
+            {"albumId":"d2","title":"The Dark Side of the Moon","year":1973,"cover":"/assets/albums/dark_side.jpg","price":25},
+            {"albumId":"d3","title":"Animals","year":1977,"cover":"/assets/albums/animals.jpg","price":15}
+        ],
+        "genre":"Rock"
+    }
+  ]
+}
