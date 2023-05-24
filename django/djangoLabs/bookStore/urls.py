@@ -23,7 +23,7 @@ app_name = 'bookStore'
 urlpatterns = [
     path('', index, name="index"),
     path('details/<int:book_id>', show_details, name="show_details"),
-    path('edit/<int:book_id>', edit_book , name="edit"),
-    path('delete/<int:book_id>', delete_book , name="delete"),
+    path('edit/<int:id>', edit_book, name="edit"),
+    path('delete/<int:id>', delete_book , name="delete"),
     path('add/', add_book , name="add"),
 ]

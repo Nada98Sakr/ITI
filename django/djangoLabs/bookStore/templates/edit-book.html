@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block title %} Book Store {% endblock %}
+{% block content %}
+
+<form class="form w-50 mx-auto bg-body-secondary border rounded-4 p-5" action="{% url 'bookStore:edit' book.id %}" method="post">
+    {% csrf_token %}
+    <h2 class="mb-4">Add new Book</h2>
+    <div>{{ form.as_p }}</div>
+    <input type="submit" class="btn btn-primary mt-5" value="UPDATE" />
+</form>
+
+{% endblock %}
